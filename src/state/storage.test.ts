@@ -25,6 +25,26 @@ describe('local demo persistence', () => {
       expect(result.warning).toContain('fresh collection');
     }
   });
+  it('updates an untouched legacy profile while preserving saved watches', () => {
+    const state = {
+      ...freshDemo(),
+      collectionIds: [catalogue[4].id, 'custom-example'],
+      customWatches: [{ ...catalogue[0], id: 'custom-example' }],
+      profile: {
+        name: 'Alex Morgan',
+        bio: 'A soft spot for mechanical things and the stories they tell. Collecting slowly, wearing often.',
+        location: 'London, UK',
+      },
+    };
+    expect(parseDemo(JSON.stringify(state))).toEqual({
+      ...state,
+      profile: { name: 'Somil Aggarwal', bio: '', location: '' },
+    });
+    for (const edit of [{ name: 'Sam Collector' }, { bio: 'My watches' }, { location: 'Paris' }]) {
+      const edited = { ...state, profile: { ...state.profile, ...edit } };
+      expect(parseDemo(JSON.stringify(edited))).toEqual(edited);
+    }
+  });
   it('handles unavailable storage', () => {
     const storage = {
       getItem: () => {

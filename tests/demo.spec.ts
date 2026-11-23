@@ -105,7 +105,7 @@ test('profile edits persist and demo reset leaves unrelated storage alone', asyn
   await expect(page.getByRole('heading', { name: 'Discover', exact: true })).toBeVisible();
   expect(await page.evaluate(() => localStorage.getItem('unrelated-project'))).toBe('keep-me');
   await navigate(page, /^My profile$/);
-  await expect(page.getByLabel('Display name *', { exact: true })).toHaveValue('Alex Morgan');
+  await expect(page.getByLabel('Display name *', { exact: true })).toHaveValue('Somil Aggarwal');
 });
 
 test('example public collection is fixed and works without local user data', async ({ page }) => {
