@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link, NavLink, Route, Routes, useLocation } from 'react-router-dom';
+import { Link, NavLink, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import {
   Watch,
   Compass,
@@ -11,19 +11,33 @@ import {
   X,
   Check,
   CircleHelp,
+  UserRound,
+  BookOpen,
 } from 'lucide-react';
 import Discover from './pages/Discover';
 import Collection from './pages/Collection';
 import WatchDetails from './pages/WatchDetails';
 import About from './pages/About';
+import AddWatch from './pages/AddWatch';
+import Profile from './pages/Profile';
+import SharedCollection from './pages/SharedCollection';
 import { useDemo } from './state/DemoProvider';
 
 export default function App() {
   const { state, toast, warning, reset } = useDemo();
   const { pathname } = useLocation();
+  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const resetDialog = useRef<HTMLDialogElement>(null);
   const mainRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    if (!menuOpen) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMenuOpen(false);
+    };
+    window.addEventListener('keydown', closeOnEscape);
+    return () => window.removeEventListener('keydown', closeOnEscape);
+  }, [menuOpen]);
   useEffect(() => {
     window.scrollTo(0, 0);
     setMenuOpen(false);
@@ -35,7 +49,13 @@ export default function App() {
           ? 'Watch details'
           : pathname === '/collection'
             ? 'My collection'
-            : 'About';
+            : pathname === '/add'
+              ? 'Add a watch'
+              : pathname === '/profile'
+                ? 'Collector profile'
+                : pathname.startsWith('/shared/')
+                  ? 'The collector’s edit'
+                  : 'About';
     document.title = `${page} — Horlo`;
   }, [pathname]);
   return (
@@ -81,7 +101,7 @@ export default function App() {
         </Link>
         <p className="sidebar-tagline">Time, well collected.</p>
         <p className="nav-label">YOUR WATCH WORLD</p>
-        <nav aria-label="Main navigation">
+        <nav aria-label="Main navigation" onClick={() => setMenuOpen(false)}>
           <NavLink to="/" end>
             <Compass size={19} />
             Discover
@@ -89,6 +109,14 @@ export default function App() {
           <NavLink to="/collection">
             <Layers3 size={19} />
             My collection<span className="nav-count">{state.collectionIds.length}</span>
+          </NavLink>
+          <NavLink to="/profile">
+            <UserRound size={19} />
+            My profile
+          </NavLink>
+          <NavLink to="/shared/collectors-edit">
+            <BookOpen size={19} />
+            Collector’s edit
           </NavLink>
           <NavLink to="/about">
             <Info size={19} />
@@ -115,7 +143,7 @@ export default function App() {
             <Code2 size={17} />
             Built in the open
           </a>
-          <div className="sidebar-profile">
+          <Link to="/profile" className="sidebar-profile" onClick={() => setMenuOpen(false)}>
             <div className="avatar avatar-small">
               {state.profile.name
                 .split(' ')
@@ -127,10 +155,10 @@ export default function App() {
               <strong>{state.profile.name}</strong>
               <span>Demo collector</span>
             </div>
-          </div>
+          </Link>
         </div>
       </aside>
-      <div className="main-shell">
+      <div className="main-shell" inert={menuOpen}>
         <div className="topbar">
           <span>
             <span className="topbar-rule" /> A home for your collection
@@ -150,6 +178,9 @@ export default function App() {
             <Route path="/collection" element={<Collection />} />
             <Route path="/watch/:id" element={<WatchDetails key={pathname} />} />
             <Route path="/about" element={<About />} />
+            <Route path="/add" element={<AddWatch />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/shared/collectors-edit" element={<SharedCollection />} />
             <Route
               path="*"
               element={
@@ -210,6 +241,8 @@ export default function App() {
             onClick={() => {
               reset();
               resetDialog.current?.close();
+              setMenuOpen(false);
+              navigate('/');
             }}
           >
             Reset demo

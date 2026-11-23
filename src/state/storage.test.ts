@@ -52,7 +52,10 @@ describe('local demo persistence', () => {
     ]) {
       expect(() =>
         parseDemo(
-          JSON.stringify({ ...freshDemo(), customWatches: [{ ...catalogue[0], ...field }] }),
+          JSON.stringify({
+            ...freshDemo(),
+            customWatches: [{ ...catalogue[0], id: 'custom-example', ...field }],
+          }),
         ),
       ).toThrow();
     }

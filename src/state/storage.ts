@@ -10,7 +10,7 @@ export const profileSchema = z.object({
 const demoSchema = z.object({
   version: z.literal(1),
   collectionIds: z.array(z.string()).max(100),
-  customWatches: z.array(watchSchema).max(30),
+  customWatches: z.array(watchSchema.refine((watch) => watch.id.startsWith('custom-'))).max(30),
   profile: profileSchema,
 });
 export type DemoState = z.infer<typeof demoSchema>;

@@ -1,16 +1,18 @@
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, SlidersHorizontal, X, LayoutGrid, Rows3, ChevronDown } from 'lucide-react';
+import { Search, SlidersHorizontal, X, LayoutGrid, Rows3, ChevronDown, Plus } from 'lucide-react';
 import { catalogue, categories, filterWatches, imagePath } from '../data/catalogue';
 import { WatchCard } from '../components/WatchCard';
+import { useDemo } from '../state/DemoProvider';
 
 export default function Discover() {
+  const { watches } = useDemo();
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('All');
   const [sort, setSort] = useState('curated');
   const [listView, setListView] = useState(false);
   const catalogueRef = useRef<HTMLElement>(null);
-  const filtered = filterWatches(catalogue, query, category, sort);
+  const filtered = filterWatches(watches, query, category, sort);
   const featured = catalogue.find((watch) => watch.featured) || catalogue[0];
   function clear() {
     setQuery('');
@@ -23,8 +25,8 @@ export default function Discover() {
           <p className="eyebrow muted">A LITTLE OBSESSION WITH TIME</p>
           <h1>Discover</h1>
         </div>
-        <Link className="button button-light" to="/collection">
-          View my collection
+        <Link className="button button-light" to="/add">
+          <Plus size={17} /> Add a watch
         </Link>
       </div>
       <section className="hero" aria-labelledby="hero-title">
@@ -76,7 +78,7 @@ export default function Discover() {
           <div>
             <p className="eyebrow muted">A CONSIDERED SELECTION</p>
             <h2 id="catalogue-title">
-              Find your next favourite<span className="count-badge">{catalogue.length}</span>
+              Find your next favourite<span className="count-badge">{watches.length}</span>
             </h2>
           </div>
           <div className="view-switch" aria-label="Catalogue display">

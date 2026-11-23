@@ -15,9 +15,15 @@ export default function Collection() {
           <h1>My collection</h1>
           <p className="page-subtitle">A few good watches. Your kind of time.</p>
         </div>
-        <Link className="button button-dark" to="/">
-          <Plus size={18} /> Find a watch
-        </Link>
+        <div className="heading-actions">
+          <Link className="button button-light" to="/">
+            Explore watches
+          </Link>
+          <Link className="button button-dark" to="/add">
+            <Plus size={18} />
+            Add your own
+          </Link>
+        </div>
       </div>
       <div className="collection-banner">
         <div className="avatar">
