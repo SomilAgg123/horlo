@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, SlidersHorizontal, X, LayoutGrid, Rows3, ChevronDown, Plus } from 'lucide-react';
 import { catalogue, categories, filterWatches, imagePath } from '../data/catalogue';
@@ -11,7 +11,6 @@ export default function Discover() {
   const [category, setCategory] = useState('All');
   const [sort, setSort] = useState('curated');
   const [listView, setListView] = useState(false);
-  const catalogueRef = useRef<HTMLElement>(null);
   const filtered = filterWatches(watches, query, category, sort);
   const featured = catalogue.find((watch) => watch.featured) || catalogue[0];
   function clear() {
@@ -22,7 +21,6 @@ export default function Discover() {
     <>
       <div className="page-heading">
         <div>
-          <p className="eyebrow muted">A LITTLE OBSESSION WITH TIME</p>
           <h1>Discover</h1>
         </div>
         <Link className="button button-light" to="/add">
@@ -31,27 +29,13 @@ export default function Discover() {
       </div>
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <span className="hero-kicker">
-            <span /> FOR THE LOVE OF WATCHES
-          </span>
           <h2 id="hero-title">
-            More than time.
-            <br />
-            <em>A little obsession.</em>
+            <span>{featured.brand}</span>
+            {featured.model}
           </h2>
-          <p>
-            The pieces you love. The stories they tell.
-            <br />
-            Find your next favourite and make it yours.
-          </p>
-          <button
-            className="button button-orange"
-            onClick={() =>
-              catalogueRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-            }
-          >
-            Explore the catalogue
-          </button>
+          <Link className="button button-orange" to={`/watch/${featured.id}`}>
+            View watch
+          </Link>
         </div>
         <Link
           to={`/watch/${featured.id}`}
@@ -60,25 +44,17 @@ export default function Discover() {
         >
           <div className="hero-orbit orbit-one" />
           <div className="hero-orbit orbit-two" />
-          <span className="hero-annotation">EVERY SECOND HAS A STORY</span>
           <img
             src={imagePath(featured.image)}
             alt={`Illustration of the ${featured.brand} ${featured.model}`}
           />
-          <div className="hero-caption">
-            <span className="eyebrow">THE EVERYDAY ICON</span>
-            <span>
-              {featured.brand} {featured.model}
-            </span>
-          </div>
         </Link>
       </section>
-      <section className="catalogue-section" ref={catalogueRef} aria-labelledby="catalogue-title">
+      <section className="catalogue-section" aria-labelledby="catalogue-title">
         <div className="section-heading">
           <div>
-            <p className="eyebrow muted">A CONSIDERED SELECTION</p>
             <h2 id="catalogue-title">
-              Find your next favourite<span className="count-badge">{watches.length}</span>
+              Catalogue<span className="count-badge">{watches.length}</span>
             </h2>
           </div>
           <div className="view-switch" aria-label="Catalogue display">
@@ -158,10 +134,6 @@ export default function Discover() {
             </button>
           </div>
         )}
-        <p className="catalogue-note">
-          Selected for character, not price. Original illustrations; specifications sourced from the
-          makers.
-        </p>
       </section>
     </>
   );

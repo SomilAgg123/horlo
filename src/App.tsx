@@ -10,7 +10,6 @@ import {
   Menu,
   X,
   Check,
-  CircleHelp,
   UserRound,
   BookOpen,
 } from 'lucide-react';
@@ -99,8 +98,6 @@ export default function App() {
           </span>
           horlo<span className="logo-period">.</span>
         </Link>
-        <p className="sidebar-tagline">Time, well collected.</p>
-        <p className="nav-label">YOUR WATCH WORLD</p>
         <nav aria-label="Main navigation" onClick={() => setMenuOpen(false)}>
           <NavLink to="/" end>
             <Compass size={19} />
@@ -124,16 +121,9 @@ export default function App() {
           </NavLink>
         </nav>
         <div className="sidebar-bottom">
-          <div className="demo-card">
-            <span className="demo-icon">
-              <Compass size={19} />
-            </span>
-            <h3>Make yourself at home.</h3>
-            <p>This is your demo to explore. Your changes stay in this browser.</p>
-            <button onClick={() => resetDialog.current?.showModal()}>
-              <RotateCcw size={14} /> Reset demo
-            </button>
-          </div>
+          <button className="reset-demo" onClick={() => resetDialog.current?.showModal()}>
+            <RotateCcw size={16} /> Reset demo
+          </button>
           <a
             className="github-link"
             href="https://github.com/SomilAgg123/horlo"
@@ -141,7 +131,7 @@ export default function App() {
             rel="noreferrer"
           >
             <Code2 size={17} />
-            Built in the open
+            GitHub
           </a>
           <Link to="/profile" className="sidebar-profile" onClick={() => setMenuOpen(false)}>
             <div className="avatar avatar-small">
@@ -153,20 +143,11 @@ export default function App() {
             </div>
             <div>
               <strong>{state.profile.name}</strong>
-              <span>Demo collector</span>
             </div>
           </Link>
         </div>
       </aside>
       <div className="main-shell" inert={menuOpen}>
-        <div className="topbar">
-          <span>
-            <span className="topbar-rule" /> A home for your collection
-          </span>
-          <Link to="/about">
-            <CircleHelp size={16} /> Interactive demo
-          </Link>
-        </div>
         <main id="main-content" ref={mainRef} tabIndex={-1}>
           {warning && (
             <div className="storage-warning" role="alert">
@@ -197,11 +178,10 @@ export default function App() {
         </main>
         <footer className="site-footer">
           <span>
-            horlo<span className="accent">.</span>{' '}
-            <span className="footer-tagline">For the love of the details.</span>
+            horlo<span className="accent">.</span>
           </span>
           <span>
-            A personal project by{' '}
+            By{' '}
             <a href="https://github.com/SomilAgg123" target="_blank" rel="noreferrer">
               SomilAgg123
             </a>

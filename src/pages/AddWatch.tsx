@@ -1,6 +1,6 @@
 import { useState, type ChangeEvent, type FormEvent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Camera, ChevronDown, ChevronRight, Plus, ShieldCheck, X } from 'lucide-react';
+import { Camera, ChevronDown, ChevronRight, Plus, X } from 'lucide-react';
 import { categories, movements, watchSchema, imagePath } from '../data/catalogue';
 import { useDemo } from '../state/DemoProvider';
 import { preparePhoto } from '../lib/photo';
@@ -70,11 +70,7 @@ export default function AddWatch() {
       </nav>
       <div className="page-heading">
         <div>
-          <p className="eyebrow muted">EVERY PIECE HAS A PLACE</p>
           <h1>Add your own watch</h1>
-          <p className="page-subtitle">
-            The heirloom, the everyday favourite, the unexpected find.
-          </p>
         </div>
       </div>
       <form className="watch-form" onSubmit={submit}>
@@ -100,7 +96,6 @@ export default function AddWatch() {
                   src={imagePath('/watches/your-watch.svg')}
                   alt=""
                 />
-                <span className="photo-picker-caption">Give your watch a face.</span>
               </>
             )}
             <label className="button button-light photo-upload">
@@ -118,18 +113,12 @@ export default function AddWatch() {
           <p className="form-hint">
             JPEG, PNG, or WebP · Up to 5 MB
             <br />
-            Photos are resized and saved only in your browser.
+            Saved in this browser.
           </p>
-          <div className="privacy-note">
-            <ShieldCheck size={19} />
-            <p>Your photos and details stay on this device. Nothing is uploaded to a server.</p>
-          </div>
         </div>
         <div className="form-panel">
-          <h2>The essentials</h2>
-          <p className="form-section-note">
-            Start with what makes it yours. Fields marked * are required.
-          </p>
+          <h2>Watch details</h2>
+          <p className="form-section-note">* Required</p>
           <div className="form-grid">
             <label>
               Brand *
@@ -209,12 +198,7 @@ export default function AddWatch() {
             </label>
             <label className="full-width">
               Its story
-              <textarea
-                name="description"
-                rows={4}
-                maxLength={1200}
-                placeholder="Where you found it. Why you love it. A detail worth remembering."
-              />
+              <textarea name="description" rows={4} maxLength={1200} placeholder="Optional notes" />
             </label>
           </div>
           {error && (

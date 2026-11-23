@@ -55,20 +55,14 @@ export default function WatchDetails() {
               {zoomed ? 'Full view' : 'Dial detail'}
             </button>
           </div>
-          <p className="image-caption">
-            {watch.id.startsWith('custom-')
-              ? 'Your personal timepiece'
-              : 'Original illustration · Product proportions are illustrative'}
-          </p>
         </div>
         <section className="detail-copy">
           <p className="eyebrow accent">{watch.brand}</p>
           <h1>{watch.model}</h1>
           <p className="reference">REFERENCE {watch.reference || 'CUSTOM WATCH'}</p>
-          <p className="detail-description">
-            {watch.description ||
-              'A piece with a story of its own. Part of your personal collection.'}
-          </p>
+          {watch.id.startsWith('custom-') && watch.description && (
+            <p className="detail-description">{watch.description}</p>
+          )}
           <dl className="spec-table">
             {[
               ['Movement', watch.movement],
@@ -91,7 +85,6 @@ export default function WatchDetails() {
             {collected ? <Check size={18} /> : <Plus size={18} />}
             {collected ? 'In your collection · Remove' : 'Add to my collection'}
           </button>
-          <p className="detail-help">A collection for the love of it. Nothing here is for sale.</p>
           {watch.source && (
             <a
               className="text-link manufacturer-link"
@@ -108,8 +101,7 @@ export default function WatchDetails() {
       <section className="related-section">
         <div className="section-heading">
           <div>
-            <p className="eyebrow muted">KEEP EXPLORING</p>
-            <h2>Another kind of character</h2>
+            <h2>Related watches</h2>
           </div>
         </div>
         <div className="watch-grid">
