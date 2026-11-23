@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from 'react';
 import { Link } from 'react-router-dom';
-import { Check, MapPin, LockKeyhole } from 'lucide-react';
+import { Check, MapPin } from 'lucide-react';
 import { useDemo } from '../state/DemoProvider';
 import { profileSchema } from '../state/storage';
 
@@ -24,9 +24,7 @@ export default function Profile() {
     <>
       <div className="page-heading">
         <div>
-          <p className="eyebrow muted">THE PERSON BEHIND THE PIECES</p>
           <h1>Collector profile</h1>
-          <p className="page-subtitle">Make this little corner of Horlo your own.</p>
         </div>
       </div>
       <div className="profile-layout">
@@ -47,20 +45,17 @@ export default function Profile() {
               {location}
             </span>
           )}
-          <p>{bio || 'A collection with a story of its own.'}</p>
+          {bio && <p>{bio}</p>}
           <div className="profile-count">
             <strong>{state.collectionIds.length}</strong>
-            <span>TIMEPIECES, AND COUNTING</span>
+            <span>Watches</span>
           </div>
           <Link className="button button-light" to="/collection">
             View my collection
           </Link>
         </section>
         <form className="form-panel profile-form" onSubmit={submit}>
-          <h2>A little about you</h2>
-          <p className="form-section-note">
-            Try a new name, add a story. This profile is part of your local demo.
-          </p>
+          <h2>Profile details</h2>
           <div className="form-grid">
             <label className="full-width">
               Display name *
@@ -78,7 +73,7 @@ export default function Profile() {
                 value={location}
                 onChange={(event) => setLocation(event.target.value)}
                 maxLength={80}
-                placeholder="Your corner of the world"
+                placeholder="City, country"
                 autoComplete="off"
               />
             </label>
@@ -98,10 +93,7 @@ export default function Profile() {
               {error}
             </p>
           )}
-          <div className="privacy-note">
-            <LockKeyhole size={18} />
-            <p>This is not a public account. These details stay in this browser.</p>
-          </div>
+          <p className="form-hint">Saved in this browser.</p>
           <div className="form-actions">
             <button className="button button-dark" type="submit">
               <Check size={17} />
