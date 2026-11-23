@@ -77,7 +77,7 @@ In repository **Settings → Pages**, the source must be **GitHub Actions**. Whe
 
 ## Demo boundaries
 
-This is a finished interactive demo, not a live marketplace or multi-user service. The sample profile is fictional. Your edits stay in this browser and do not sync between devices or tabs; clearing browser storage removes them. Custom watch links only resolve in the browser where they were created. The shared collection is a fixed example, not a publication of your personal collection.
+This is a finished interactive demo, not a live marketplace or multi-user service. The default profile uses the project author's name; the watch collections are demo data. Your edits stay in this browser and do not sync between devices or tabs; clearing browser storage removes them. Custom watch links only resolve in the browser where they were created. The shared collection is a fixed example, not a publication of your personal collection.
 
 The demo accepts up to 30 custom watches. Selected images may be up to 5 MB and are resized to at most 800 pixels before saving; browser storage quotas still apply. There are no purchases, prices, accounts, analytics scripts, or collection uploads. GitHub Pages serves the site and may retain standard hosting logs.
 

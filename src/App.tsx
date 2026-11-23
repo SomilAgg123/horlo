@@ -183,7 +183,7 @@ export default function App() {
           <span>
             By{' '}
             <a href="https://github.com/SomilAgg123" target="_blank" rel="noreferrer">
-              SomilAgg123
+              Somil Aggarwal
             </a>
           </span>
         </footer>

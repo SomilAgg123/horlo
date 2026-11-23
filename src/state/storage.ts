@@ -15,21 +15,36 @@ const demoSchema = z.object({
 });
 export type DemoState = z.infer<typeof demoSchema>;
 
+export const defaultProfile: DemoState['profile'] = {
+  name: 'Somil Aggarwal',
+  bio: '',
+  location: '',
+};
+const legacyProfile: DemoState['profile'] = {
+  name: 'Alex Morgan',
+  bio: 'A soft spot for mechanical things and the stories they tell. Collecting slowly, wearing often.',
+  location: 'London, UK',
+};
+
 export function freshDemo(): DemoState {
   return {
     version: 1,
     collectionIds: catalogue.slice(0, 3).map((watch) => watch.id),
     customWatches: [],
-    profile: {
-      name: 'Alex Morgan',
-      bio: 'A soft spot for mechanical things and the stories they tell. Collecting slowly, wearing often.',
-      location: 'London, UK',
-    },
+    profile: { ...defaultProfile },
   };
 }
 
 export function parseDemo(raw: string): DemoState {
   const state = demoSchema.parse(JSON.parse(raw));
+  // Update untouched sample profiles without resetting collections or user edits.
+  if (
+    state.profile.name === legacyProfile.name &&
+    state.profile.bio === legacyProfile.bio &&
+    state.profile.location === legacyProfile.location
+  ) {
+    state.profile = { ...defaultProfile };
+  }
   const ids = new Set([...catalogue, ...state.customWatches].map((watch) => watch.id));
   return { ...state, collectionIds: [...new Set(state.collectionIds)].filter((id) => ids.has(id)) };
 }

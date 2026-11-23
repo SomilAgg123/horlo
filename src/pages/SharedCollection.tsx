@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Copy, MapPin } from 'lucide-react';
+import { Copy } from 'lucide-react';
 import { catalogue } from '../data/catalogue';
 import { WatchCard } from '../components/WatchCard';
 import { useDemo } from '../state/DemoProvider';
+import { defaultProfile } from '../state/storage';
 
 const sampleIds = ['rolex-submariner', 'cartier-tank', 'casio-a168', 'hamilton-khaki'];
 
@@ -39,13 +40,15 @@ export default function SharedCollection() {
       )}
       <div className="shared-intro">
         <div className="shared-person">
-          <div className="avatar">AM</div>
+          <div className="avatar">
+            {defaultProfile.name
+              .split(' ')
+              .map((part) => part[0])
+              .slice(0, 2)
+              .join('')}
+          </div>
           <div>
-            <h2>Alex Morgan</h2>
-            <span>
-              <MapPin size={14} />
-              London, UK · Sample collector
-            </span>
+            <h2>{defaultProfile.name}</h2>
           </div>
         </div>
       </div>
