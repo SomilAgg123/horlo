@@ -7,7 +7,7 @@
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   --ink: #1b2938;
-  --muted: #74808c;
+  --muted: #62717f;
   --line: #e7eaee;
   --orange: #ed855d;
   --sidebar: 232px;
@@ -228,14 +228,14 @@ main:focus {
 }
 .sidebar-tagline {
   font-size: 0.75rem;
-  color: #84909b;
+  color: #62717f;
   margin: 5px 0 46px 1px;
 }
 .nav-label {
   font-size: 0.75rem;
   letter-spacing: 0.15em;
   font-weight: 650;
-  color: #8b959f;
+  color: #62717f;
   margin: 0 0 15px 12px;
 }
 .sidebar nav {
@@ -249,7 +249,7 @@ main:focus {
   align-items: center;
   font-size: 0.875rem;
   padding: 13px 12px;
-  color: #6a7785;
+  color: #62717f;
   border-radius: 6px;
   font-weight: 500;
 }
@@ -273,7 +273,7 @@ main:focus {
   font-size: 0.75rem;
   min-width: 22px;
   height: 21px;
-  color: #6b7885;
+  color: #62717f;
 }
 .sidebar-bottom {
   margin-top: auto;
@@ -286,7 +286,7 @@ main:focus {
   padding: 17px 14px;
 }
 .demo-icon {
-  color: #8595a4;
+  color: #62717f;
   display: inline-flex;
   margin-bottom: 10px;
 }
@@ -297,7 +297,7 @@ main:focus {
 }
 .demo-card p {
   font-size: 0.75rem;
-  color: #7a8591;
+  color: #62717f;
   line-height: 1.7;
 }
 .demo-card button {
@@ -317,7 +317,7 @@ main:focus {
   align-items: center;
   gap: 8px;
   font-size: 0.75rem;
-  color: #6b7884;
+  color: #62717f;
   padding: 20px 4px;
 }
 .sidebar-profile {
@@ -355,7 +355,7 @@ main:focus {
 }
 .sidebar-profile span {
   font-size: 0.75rem;
-  color: #8a939e;
+  color: #62717f;
   display: block;
   margin-top: 2px;
 }
@@ -374,7 +374,7 @@ main:focus {
   justify-content: space-between;
   padding: 0 42px;
   background: #fcfcfd;
-  color: #7d8894;
+  color: #62717f;
   font-size: 0.75rem;
 }
 .topbar > span,
@@ -569,7 +569,7 @@ main {
   font-size: 0.75rem;
   letter-spacing: 0;
   border-radius: 5px;
-  color: #7c8793;
+  color: #62717f;
   font-family: 'DM Sans Variable', sans-serif;
 }
 .view-switch {
@@ -582,7 +582,7 @@ main {
 }
 .view-switch button {
   background: none;
-  color: #8b96a0;
+  color: #62717f;
   padding: 6px;
   display: grid;
   place-items: center;
@@ -608,7 +608,7 @@ main {
   border: 1px solid #e0e5ea;
   border-radius: 6px;
   padding: 0 13px;
-  color: #95a0ac;
+  color: #62717f;
   flex: 1;
   max-width: 460px;
 }
@@ -622,7 +622,7 @@ main {
   color: #334150;
 }
 .search-field input::placeholder {
-  color: #929ca8;
+  color: #62717f;
 }
 .search-field:focus-within {
   border-color: #8b9eaf;
@@ -642,7 +642,7 @@ main {
   display: flex;
   align-items: center;
   gap: 7px;
-  color: #7c8793;
+  color: #62717f;
   font-size: 0.76rem;
 }
 .sort-field select {
@@ -675,7 +675,7 @@ main {
   min-height: 33px;
   border-radius: 5px;
   font-size: 0.75rem;
-  color: #6e7b89;
+  color: #62717f;
   transition: background 0.15s;
 }
 .filter-chip:hover {
@@ -688,7 +688,7 @@ main {
 }
 .results-count {
   font-size: 0.75rem;
-  color: #8a96a1;
+  color: #62717f;
   margin-left: auto;
 }
 .watch-grid {
@@ -743,7 +743,7 @@ main {
   background: #ffffffcc;
   padding: 5px 8px;
   border-radius: 4px;
-  color: #7c8995;
+  color: #62717f;
   z-index: 1;
 }
 .collect-button {
@@ -754,7 +754,7 @@ main {
   height: 31px;
   border-radius: 50%;
   background: #fff;
-  color: #788795;
+  color: #62717f;
   display: grid;
   place-items: center;
   box-shadow: 0 1px 5px #1f32400a;
@@ -774,7 +774,7 @@ main {
 }
 .brand-name {
   font-size: 0.75rem;
-  color: #82909e;
+  color: #62717f;
   letter-spacing: 0.14em;
 }
 .watch-card h3 {
@@ -790,7 +790,7 @@ main {
 .reference {
   font-family: 'DM Sans Variable', sans-serif;
   font-size: 0.75rem;
-  color: #98a2ac;
+  color: #62717f;
   letter-spacing: 0.025em;
 }
 .watch-card-specs {
@@ -801,7 +801,7 @@ main {
   gap: 8px;
   align-items: center;
   font-size: 0.75rem;
-  color: #8b96a2;
+  color: #62717f;
 }
 .spec-dot {
   width: 3px;
@@ -811,7 +811,7 @@ main {
 }
 .catalogue-note {
   font-size: 0.75rem;
-  color: #8a96a2;
+  color: #62717f;
   text-align: center;
   margin: 30px auto;
   line-height: 1.7;
@@ -860,14 +860,14 @@ main {
   gap: 15px;
 }
 .empty-state > svg {
-  color: #8d9dac;
+  color: #62717f;
 }
 .empty-state h3,
 .empty-state h2 {
   font-size: 1.55rem;
 }
 .empty-state p {
-  color: #82909d;
+  color: #62717f;
   font-size: 0.9rem;
 }
 .empty-state .button {
@@ -883,21 +883,21 @@ main {
   gap: 20px;
   border-top: 1px solid #e9edf0;
   font-size: 0.75rem;
-  color: #8b96a1;
+  color: #62717f;
 }
 .site-footer > span:first-child {
   font-size: 1.1rem;
   font-weight: 650;
-  color: #657786;
+  color: #62717f;
 }
 .footer-tagline {
   margin-left: 12px;
   font-size: 0.75rem;
   font-weight: 400;
-  color: #939ca6;
+  color: #62717f;
 }
 .site-footer a {
-  color: #647586;
+  color: #62717f;
 }
 .toast {
   position: fixed;
@@ -951,7 +951,7 @@ main {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 15px;
-  color: #7b8d9c;
+  color: #62717f;
 }
 .icon-button {
   background: transparent;
@@ -969,7 +969,7 @@ main {
 }
 .modal p {
   font-size: 0.9rem;
-  color: #71808d;
+  color: #62717f;
 }
 .modal-actions {
   display: flex;
@@ -988,7 +988,7 @@ main {
 }
 .collection-banner .eyebrow {
   font-size: 0.75rem;
-  color: #82909c;
+  color: #62717f;
   margin-bottom: 5px;
 }
 .collection-banner h2 {
@@ -998,12 +998,12 @@ main {
 .collection-banner p:last-child {
   max-width: 500px;
   font-size: 0.82rem;
-  color: #71808f;
+  color: #62717f;
 }
 .demo-pill {
   font-size: 0.75rem;
   border: 1px solid #cad5df;
-  color: #728595;
+  color: #62717f;
   border-radius: 20px;
   padding: 6px 10px;
   white-space: nowrap;
@@ -1024,14 +1024,14 @@ main {
   align-items: center;
   gap: 14px;
   border-right: 1px solid var(--line);
-  color: #8c9ba8;
+  color: #62717f;
 }
 .stats-row > div:last-child {
   border-right: 0;
 }
 .stats-row span {
   font-size: 0.76rem;
-  color: #8d99a5;
+  color: #62717f;
 }
 .stats-row strong {
   font-size: 1.2rem;
@@ -1044,7 +1044,7 @@ main {
   gap: 9px;
   align-items: center;
   font-size: 0.75rem;
-  color: #8e9aa5;
+  color: #62717f;
   margin-bottom: 26px;
   flex-wrap: wrap;
 }
@@ -1093,12 +1093,12 @@ main {
   gap: 7px;
   border-radius: 7px;
   font-size: 0.75rem;
-  color: #657d90;
+  color: #62717f;
 }
 .image-caption {
   text-align: center;
   font-size: 0.75rem;
-  color: #8c98a4;
+  color: #62717f;
   margin-top: 12px;
 }
 .detail-copy {
@@ -1116,7 +1116,7 @@ main {
 }
 .detail-description {
   font-size: 0.92rem;
-  color: #7a8997;
+  color: #62717f;
   margin: 25px 0;
   line-height: 1.85;
 }
@@ -1134,7 +1134,7 @@ main {
   font-size: 0.78rem;
 }
 .spec-table dt {
-  color: #8c98a3;
+  color: #62717f;
 }
 .spec-table dd {
   margin: 0;
@@ -1143,13 +1143,13 @@ main {
 }
 .detail-help {
   font-size: 0.75rem;
-  color: #8f9ba7;
+  color: #62717f;
   text-align: center;
   margin: 13px 0 20px;
 }
 .manufacturer-link {
   font-size: 0.75rem;
-  color: #708596;
+  color: #62717f;
 }
 .related-section {
   margin-top: 40px;
@@ -1169,7 +1169,7 @@ main {
 }
 .about-intro {
   font-size: 1.1rem;
-  color: #7d8b98;
+  color: #62717f;
   max-width: 520px;
 }
 .about-grid {
@@ -1194,7 +1194,7 @@ main {
 }
 .about-grid p {
   font-size: 0.85rem;
-  color: #7c8a97;
+  color: #62717f;
   line-height: 1.8;
 }
 .about-actions {
@@ -2028,7 +2028,7 @@ main {
 }
 .form-section-note {
   font-size: 0.875rem;
-  color: #788796;
+  color: #62717f;
   margin-bottom: 26px;
 }
 .form-grid {
@@ -2063,7 +2063,7 @@ main {
 }
 .form-grid input::placeholder,
 .form-grid textarea::placeholder {
-  color: #8593a1;
+  color: #62717f;
   font-size: 0.875rem;
 }
 .form-grid textarea {
@@ -2124,7 +2124,7 @@ main {
 }
 .photo-picker-caption {
   font-size: 0.875rem;
-  color: #778b9b;
+  color: #62717f;
   margin: 13px 0;
 }
 .photo-picker.has-photo > img {
@@ -2163,7 +2163,7 @@ main {
 }
 .form-hint {
   font-size: 0.75rem;
-  color: #7f8e9d;
+  color: #62717f;
   text-align: center;
   margin: 16px 0;
   line-height: 1.8;
@@ -2175,7 +2175,7 @@ main {
   padding: 17px;
   border-radius: 7px;
   background: #edf3f5;
-  color: #688293;
+  color: #62717f;
   margin-top: 24px;
 }
 .privacy-note > svg {
@@ -2224,7 +2224,7 @@ main {
   align-items: center;
   justify-content: center;
   gap: 5px;
-  color: #7d8d9b;
+  color: #62717f;
   font-size: 0.8125rem;
   margin: 10px 20px;
   overflow-wrap: anywhere;
@@ -2232,7 +2232,7 @@ main {
 .profile-preview > p {
   padding: 0 27px;
   margin: 20px 0;
-  color: #748697;
+  color: #62717f;
   font-size: 1rem;
   overflow-wrap: anywhere;
 }
@@ -2253,11 +2253,11 @@ main {
 .profile-count span {
   font-size: 0.75rem;
   letter-spacing: 0.08em;
-  color: #8394a3;
+  color: #62717f;
 }
 .character-count {
   text-align: right;
-  color: #7f8e9b;
+  color: #62717f;
   font-size: 0.75rem;
   font-weight: 400;
 }
@@ -2337,7 +2337,7 @@ main {
   display: flex;
   align-items: center;
   gap: 5px;
-  color: #7c8e9c;
+  color: #62717f;
   font-size: 0.75rem;
 }
 .collector-quote {
@@ -2345,12 +2345,12 @@ main {
   align-items: flex-start;
   gap: 10px;
   max-width: 330px;
-  color: #91a0ab;
+  color: #62717f;
 }
 .collector-quote p {
   font-size: 0.875rem;
   font-style: italic;
-  color: #748695;
+  color: #62717f;
 }
 .shared-note {
   display: flex;
@@ -2364,7 +2364,7 @@ main {
 }
 .shared-note p {
   font-size: 0.875rem;
-  color: #6c8295;
+  color: #62717f;
   max-width: 600px;
 }
 .shared-note .text-link {
@@ -2606,4 +2606,36 @@ main {
   .page-heading:has(.heading-actions) h1 {
     font-size: 1.7rem;
   }
+}
+
+@media (max-width: 700px) {
+  .collect-button {
+    width: 36px;
+    height: 36px;
+  }
+  .filter-chip {
+    min-height: 36px;
+  }
+  .view-switch button {
+    min-height: 36px;
+    min-width: 36px;
+  }
+}
+
+/* Keep the complete navigation reachable on shorter laptop screens. */
+.sidebar {
+  overflow-y: auto;
+}
+.sidebar-tagline {
+  margin-bottom: 30px;
+}
+.sidebar nav {
+  gap: 5px;
+}
+.sidebar nav a {
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+.sidebar-bottom {
+  padding-top: 20px;
 }
